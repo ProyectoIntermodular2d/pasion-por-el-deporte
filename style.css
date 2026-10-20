@@ -152,7 +152,7 @@ footer { text-align: center; padding: 1.5rem 1rem 2rem; color: #fff; font-size: 
 .contacto .nota { background: var(--papel); transform: rotate(1deg); }
 .contacto li::before { content: none; }
 .contacto li { overflow-wrap: anywhere; }
-.contacto a { color: var(--tinta); text-decoration: underline wavy var(--margen); text-underline-offset: 4px; }
+.contacto a { color: var(--tinta); text-decoration: none; background: linear-gradient(transparent 60%, var(--rosa) 60%); }
 .contacto a:hover, .contacto a:focus-visible { background: var(--resaltador); }
 
 /* Utilidades */
