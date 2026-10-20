@@ -1,0 +1,232 @@
+:root {
+    --escritorio: #2f7f86;
+    --rosa: #e79a9a;
+    --papel: #fffef7;
+    --tinta: #1f2a5c;
+    --resaltador: #fff176;
+    --margen: #e57373;
+    --linea: #c9d8f0;
+    --fuente-titulo: "Gochi Hand", "Segoe Print", "Comic Sans MS", cursive;
+    --fuente-texto: "Indie Flower", "Segoe Print", "Comic Sans MS", system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    line-height: 1.9rem;
+    color: var(--tinta);
+    background-color: var(--escritorio);
+    background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--rosa);
+    border-bottom: 3px dashed var(--tinta);
+    padding: .6rem 0;
+}
+.nav-contenedor {
+    max-width: 1100px; margin: 0 auto; padding: 0 1rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.logo { display: flex; align-items: center; gap: .6rem; font-family: var(--fuente-titulo); font-size: 1.9rem; font-weight: 700; }
+.logo img { border-radius: 50%; border: 2px solid var(--tinta); background: #fff; }
+
+.menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.menu-toggle span { width: 26px; height: 3px; background: var(--tinta); border-radius: 3px; display: block; }
+
+.nav-menu { display: flex; list-style: none; gap: 1rem; }
+.nav-menu a {
+    color: var(--tinta); text-decoration: none; padding: .3rem .7rem;
+    border-radius: 6px; font-size: 1.2rem;
+}
+.nav-menu a:hover, .nav-menu a:focus-visible { background: var(--resaltador); outline: 2px solid var(--tinta); }
+
+.submenu { position: relative; }
+.submenu-lista {
+    display: none; position: absolute; top: 100%; left: 0; min-width: 190px; z-index: 20;
+    list-style: none; background: var(--rosa); border: 3px dashed var(--tinta); border-radius: 6px; padding: .4rem;
+}
+.submenu:hover .submenu-lista, .submenu:focus-within .submenu-lista { display: block; }
+.submenu-lista a { display: block; }
+
+/* Portada */
+.portada { max-width: 900px; margin: 2.5rem auto 0; padding: 0 1rem; text-align: center; }
+.portada h1 {
+    display: inline-block; font-family: var(--fuente-titulo);
+    font-size: clamp(2.6rem, 8vw, 4.4rem); line-height: 1.1;
+    background: linear-gradient(transparent 55%, var(--resaltador) 55%);
+    color: var(--tinta); padding: 0 .6rem; transform: rotate(-1.5deg);
+}
+.portada .nota {
+    margin: 1.5rem auto 0; max-width: 720px; text-align: left;
+    background: var(--resaltador); padding: 1.2rem 1.4rem 1.2rem;
+    box-shadow: 4px 6px 0 rgba(0,0,0,.25); transform: rotate(1deg);
+}
+.nota h2 { font-family: var(--fuente-titulo); font-size: 1.8rem; line-height: 2rem; margin-bottom: .3rem; }
+.nota p { line-height: 1.6rem; }
+
+.foto {
+    position: relative; background: #fff; padding: .6rem .6rem 1.4rem;
+    box-shadow: 4px 6px 0 rgba(0,0,0,.25); max-width: 560px; margin: 3rem auto;
+}
+.foto::before {
+    content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 24px;
+    transform: translateX(-50%) rotate(-3deg); background: rgba(231,154,154,.8);
+}
+.foto img { display: block; width: 100%; height: auto; }
+.foto figcaption { font-family: var(--fuente-titulo); font-size: 1.4rem; text-align: center; margin-top: .4rem; line-height: 1.6rem; }
+
+/* Hoja de cuaderno */
+main { max-width: 900px; margin: 2.5rem auto; padding: 0 1rem; }
+.hoja {
+    position: relative; background-color: #fffdf2;
+    border: 3px solid var(--tinta); border-radius: 14px;
+    padding: 1.9rem 2rem;
+    box-shadow: 6px 8px 0 rgba(0,0,0,.25);
+}
+
+.hoja h2 {
+    font-family: var(--fuente-titulo); font-size: 2.6rem; line-height: 1.9rem;
+    margin: 0 0 1.9rem; display: inline-block;
+    background: linear-gradient(transparent 60%, var(--resaltador) 60%);
+}
+.hoja h3 { font-family: var(--fuente-titulo); font-size: 2rem; line-height: 1.9rem; margin: 3.8rem 0 1.9rem; display: inline-block; background: linear-gradient(transparent 62%, var(--rosa) 62%); padding: 0 .4rem; }
+.hoja p { margin-bottom: 1.9rem; }
+.hoja ul { margin: 0 0 1.9rem 1.2rem; }
+.hoja strong { background: var(--resaltador); padding: 0 .2rem; }
+
+.tarjeta { margin-bottom: 3.8rem; }
+.tarjeta h4 { font-family: var(--fuente-titulo); font-size: 1.9rem; line-height: 1.9rem; margin-bottom: 1.9rem; }
+.tarjeta h4::before { content: "★ "; color: var(--margen); }
+.tarjeta .foto { margin: 3.8rem auto 1rem; }
+.tarjeta:nth-of-type(even) .foto { transform: rotate(1.5deg); }
+.tarjeta:nth-of-type(odd) .foto { transform: rotate(-1.5deg); }
+
+.futbol-punto { margin-bottom: 1.9rem; }
+.futbol-punto h5 { font-family: var(--fuente-titulo); font-size: 1.6rem; line-height: 1.9rem; color: var(--margen); }
+
+/* Autores */
+.autores { max-width: 900px; margin: 3rem auto; padding: 0 1rem; }
+.autores .nota { background: var(--rosa); transform: rotate(-1deg); padding: 1.2rem 1.4rem; box-shadow: 4px 6px 0 rgba(0,0,0,.25); }
+.autores ul { list-style: none; }
+.autores li::before { content: "✏️ "; }
+
+footer { text-align: center; padding: 1.5rem 1rem 2rem; color: #fff; font-size: 1rem; }
+
+/* Móvil */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-menu {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: var(--rosa); flex-direction: column; gap: 0; display: none;
+        border-bottom: 3px dashed var(--tinta);
+    }
+    .nav-menu.active { display: flex; }
+    .nav-menu li { border-top: 1px dashed var(--tinta); }
+    .nav-menu a { display: block; padding: 1rem; border-radius: 0; }
+    .submenu-lista { display: block; position: static; border: none; background: none; padding: 0 0 0 1.2rem; }
+    .submenu-lista li { border-top: 1px dotted var(--tinta); }
+    .submenu-lista a { padding: .6rem 1rem; }
+    .hoja { padding: 1.5rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Deportes */
+.pegatina { font-size: 2.4rem; line-height: 3.8rem; height: 3.8rem; display: inline-block; transform: rotate(-8deg); }
+.deporte h4 { margin-bottom: 1.9rem; }
+.deporte .curiosidad { background: var(--resaltador); padding: .95rem 1.2rem; line-height: 1.9rem; box-shadow: 3px 4px 0 rgba(0,0,0,.2); transform: rotate(-.6deg); margin-bottom: 0; }
+.deporte .curiosidad strong { background: none; }
+
+.deporte .foto { max-width: 340px; margin: 1.9rem auto 1.9rem 0; padding: .5rem .5rem 1rem; }
+.deporte .foto svg { display: block; width: 100%; height: auto; }
+.deporte .foto figcaption { font-size: 1.3rem; line-height: 1.6rem; }
+
+/* Contacto */
+.contacto .nota { background: var(--papel); transform: rotate(1deg); }
+.contacto li::before { content: none; }
+.contacto li { overflow-wrap: anywhere; }
+.contacto a { color: var(--tinta); text-decoration: underline wavy var(--margen); text-underline-offset: 4px; }
+.contacto a:hover, .contacto a:focus-visible { background: var(--resaltador); }
+
+/* Utilidades */
+[hidden] { display: none !important; }
+.oculto { position: absolute; left: -9999px; }
+main .hoja + .hoja { margin-top: 2.5rem; }
+.foto { color: var(--tinta); }
+
+/* Botones, filtro y tema */
+.tema { background: var(--papel); border: 2px solid var(--tinta); border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; margin: 0 .8rem 0 auto; }
+.filtros { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.9rem; }
+.filtros button, .boton, .quiz-opciones button {
+    font-family: var(--fuente-texto); font-size: 1.1rem; padding: .3rem 1rem;
+    border: 2px solid var(--tinta); border-radius: 999px; background: #fff; color: var(--tinta); cursor: pointer;
+}
+.filtros button.activo { background: var(--resaltador); box-shadow: 2px 3px 0 rgba(0,0,0,.25); }
+.filtros button:hover, .boton:hover, .quiz-opciones button:hover:not(:disabled) { background: var(--resaltador); }
+.tema:focus-visible, .filtros button:focus-visible, .boton:focus-visible, .quiz-opciones button:focus-visible, .subir:focus-visible { outline: 3px solid var(--margen); outline-offset: 2px; }
+
+/* Tabla */
+.tabla-caja { overflow-x: auto; background: #fff; color: var(--tinta); border: 2px solid var(--tinta); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 600px; line-height: 1.5rem; }
+th, td { padding: .5rem .8rem; text-align: left; border-bottom: 1px dashed var(--tinta); }
+th { background: var(--resaltador); font-family: var(--fuente-titulo); font-size: 1.3rem; }
+tbody tr:nth-child(even) td { background: #f3f7ff; }
+
+/* Deportistas */
+.atletas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.4rem; }
+.atleta { background: var(--resaltador); color: var(--tinta); padding: 1rem 1.1rem; box-shadow: 3px 4px 0 rgba(0,0,0,.25); transform: rotate(-1deg); line-height: 1.5rem; }
+.atleta:nth-child(even) { background: var(--rosa); transform: rotate(1deg); }
+.hoja .atleta h3 { font-family: var(--fuente-titulo); color: var(--tinta); font-size: 1.6rem; line-height: 1.9rem; margin: 0 0 .4rem; display: block; background: none; padding: 0; }
+.hoja .atleta p { margin: 0 0 .5rem; }
+.hoja .atleta strong { background: none; padding: 0; }
+
+/* Quiz */
+.quiz { background: #fff; color: var(--tinta); border: 2px solid var(--tinta); border-radius: 10px; padding: 1.2rem; }
+.hoja .quiz p { margin: 0; }
+.quiz-pregunta { font-size: 1.3rem; }
+.quiz-opciones { display: grid; gap: .6rem; margin: 1rem 0; }
+.quiz-opciones button { text-align: left; border-radius: 10px; }
+.quiz-opciones button:disabled { cursor: default; }
+.quiz-opciones .correcta { background: #c8f0c0; }
+.quiz-opciones .incorrecta { background: #f7c6c6; }
+.hoja .quiz-feedback { min-height: 1.9rem; margin-bottom: .6rem; }
+.quiz-final { font-family: var(--fuente-titulo); font-size: 2rem; margin-bottom: 1rem !important; }
+
+/* Volver arriba */
+.subir {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 15; width: 46px; height: 46px;
+    display: grid; place-items: center; font-size: 1.5rem; text-decoration: none;
+    background: var(--resaltador); color: var(--tinta); border: 2px solid var(--tinta); border-radius: 50%;
+    box-shadow: 2px 3px 0 rgba(0,0,0,.3); opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+.subir.visible { opacity: 1; pointer-events: auto; }
+
+/* Modo oscuro */
+.oscuro { --escritorio: #14323a; }
+.oscuro .hoja { background: #1d2342; color: #f5f1d8; border-color: #f5f1d8; }
+.oscuro .hoja h4, .oscuro .hoja h5 { color: #f5f1d8; }
+.oscuro .hoja h2, .oscuro .hoja h3, .oscuro .hoja strong, .oscuro .hoja .curiosidad { color: #1f2a5c; }
+.oscuro .hoja .atleta h3 { background: none; color: #1f2a5c; }
+
+/* Más información por deporte */
+.hoja .deporte h5 { font-family: var(--fuente-titulo); font-size: 1.5rem; line-height: 1.9rem; color: #b0303f; margin: 0; }
+
+/* Tabla: letra clara y fácil de leer */
+.tabla-caja, table { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+table { font-size: 1rem; line-height: 1.5; }
+th, td { padding: .7rem 1rem; }
+th { font-family: inherit; font-size: 1rem; font-weight: 700; letter-spacing: .02em; }
+td:first-child { font-weight: 700; }
+
+/* Modo oscuro: títulos con fondo completo y texto legible */
+.oscuro .portada h1 { background: var(--resaltador); color: var(--tinta); }
+.oscuro .hoja h2 { background: var(--resaltador); padding: 0 .6rem; }
+.oscuro .hoja h3 { background: var(--rosa); }
+.oscuro .hoja .deporte h5 { color: #ffb3b3; }
