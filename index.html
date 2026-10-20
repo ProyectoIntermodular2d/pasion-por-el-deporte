@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-contenedor">
             <div class="logo">
-                <img src="imagen%202.png" alt="Logo de Deportes" width="40" height="40"> Deportes
+                <img src="imagenes/logo.png" alt="Logo de Deportes" width="40" height="40"> Deportes
             </div>
             <button class="tema" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
             <button class="menu-toggle" aria-label="Abrir menú">
@@ -34,8 +34,16 @@
                         <li><a href="#boxeo">Boxeo</a></li>
                     </ul>
                 </li>
-                <li><a href="#comparacion">Comparar</a></li>
-                <li><a href="#ecuador">Ecuador</a></li>
+                <li class="submenu"><a href="#comparacion">Más ▾</a>
+                    <ul class="submenu-lista">
+                        <li><a href="#comparacion">Comparar</a></li>
+                        <li><a href="#ecuador">Ecuador</a></li>
+                        <li><a href="#salud">Salud</a></li>
+                        <li><a href="#glosario">Glosario</a></li>
+                        <li><a href="#saber-mas">Saber más</a></li>
+                    </ul>
+                </li>
+                <li><a href="#test">Test</a></li>
                 <li><a href="#quiz">Quiz</a></li>
                 <li><a href="#autores">Autores</a></li>
                 <li><a href="#contacto">Contacto</a></li>
@@ -50,7 +58,7 @@
             <p>El deporte es mucho más que actividad física; es la unión perfecta entre disciplina, pasión y espíritu competitivo. Nos enseña a caer, aprender y levantarnos más fuertes, demostrando que los límites solo existen en la mente. Cada entrenamiento cuenta una historia de esfuerzo, y cada victoria o derrota, una lección de vida. En esencia, el deporte es el lenguaje universal que nos inspira a superarnos cada día.</p>
         </div>
         <figure class="foto">
-            <img src="https://media.istockphoto.com/id/2241375876/es/foto/jugador-de-f%C3%BAtbol-sin-rostro-en-calcetines-blancos-golpeando-la-pelota-con-poder-en-el-campo.jpg?s=612x612&w=0&k=20&c=osmzfxg6stu1znylsZW5e6iVE5saGXauQtoxwTtdmCM=" alt="Jugador de fútbol golpeando la pelota en el campo" width="550" height="320">
+            <img src="imagenes/portada.svg" alt="Ilustración de balones de distintos deportes" width="550" height="320">
             <figcaption>¡Con fuerza y sin miedo!</figcaption>
         </figure>
     </header>
@@ -60,6 +68,10 @@
             <h2>Introducción</h2>
             <p>Bienvenido a la cuna del deporte: donde la pasión no tiene límites. El deporte no es solo un juego; es constancia, emoción, superación y el latir de millones de corazones en todo el mundo. En Pasión por el deporte, vivimos y respiramos cada disciplina con la misma intensidad que tú. Desde los marcadores de último segundo y las jugadas inolvidables, hasta los análisis más profundos, historias de esfuerzo y las noticias más recientes del mundo deportivo.</p>
             <p>Ya seas un fanático del fútbol, un apasionado del baloncesto, seguidor del motor o un entusiasta del fitness, este es tu espacio. ¡Prepárate para sentir la adrenalina, debatir con la comunidad y llevar tu amor por el deporte al siguiente nivel!</p>
+
+            <h3 id="proposito">Propósito y público</h3>
+            <p><strong>Propósito:</strong> informar sobre nueve deportes, explicar sus reglas básicas y motivar a practicar deporte con buenos hábitos de salud.</p>
+            <p><strong>Público:</strong> estudiantes y jóvenes que quieren conocer o elegir un deporte, y cualquier persona curiosa por el tema.</p>
 
             <div class="filtros" role="group" aria-label="Filtrar deportes">
                 <button type="button" class="activo" data-filtro="todos" aria-pressed="true">Todos</button>
@@ -72,7 +84,7 @@
             <div class="tarjeta deporte" id="futbol" data-tipo="equipo">
                 <div class="pegatina" aria-hidden="true">⚽</div>
                 <h4>Fútbol</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de fútbol" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#b9e3a8"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="15" width="270" height="130" fill="none"/><path d="M150 15v130"/><circle cx="150" cy="80" r="26" fill="none"/><rect x="15" y="55" width="30" height="50" fill="none"/><rect x="255" y="55" width="30" height="50" fill="none"/><circle cx="215" cy="100" r="18" fill="#fff"/><path d="M215 92l8 6-3 9h-10l-3-9z" fill="#1f2a5c"/></g></svg><figcaption>Fútbol</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/futbol.svg" alt="Dibujo de fútbol" width="300" height="160"><figcaption>Fútbol</figcaption></figure>
                 <p>Dos equipos de once jugadores compiten por meter el balón en la portería rival usando todo el cuerpo menos las manos y los brazos. Es el deporte más popular del planeta.</p>
                 <ul>
                     <li><strong>Duración:</strong> 90 minutos, en dos tiempos de 45</li>
@@ -95,7 +107,7 @@
             <div class="tarjeta deporte" id="baloncesto" data-tipo="equipo">
                 <div class="pegatina" aria-hidden="true">🏀</div>
                 <h4>Baloncesto</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de baloncesto" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#ffe0b0"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="190" y="20" width="70" height="50" fill="#fff"/><rect x="212" y="45" width="26" height="20" fill="none"/><path d="M205 70q20 25 40 0" fill="none"/><path d="M225 70v80" stroke-width="5"/><circle cx="90" cy="95" r="32" fill="#f08a3c"/><path d="M58 95h64M90 63v64M68 73q22 22 0 44M112 73q-22 22 0 44" fill="none"/></g></svg><figcaption>Baloncesto</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/baloncesto.svg" alt="Dibujo de baloncesto" width="300" height="160"><figcaption>Baloncesto</figcaption></figure>
                 <p>Dos equipos de cinco jugadores buscan encestar el balón en un aro elevado. Se juega con rapidez, puntería y mucho trabajo en equipo.</p>
                 <ul>
                     <li><strong>Duración:</strong> cuatro cuartos (10 min en FIBA, 12 en la NBA)</li>
@@ -118,7 +130,7 @@
             <div class="tarjeta deporte" id="voleibol" data-tipo="equipo">
                 <div class="pegatina" aria-hidden="true">🏐</div>
                 <h4>Voleibol</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de voleibol" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#cfe8ff"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M70 135V50M230 135V50"/><path d="M70 60h160M70 85h160M70 110h160" stroke-width="2"/><path d="M110 55v60M150 55v60M190 55v60" stroke-width="2"/><circle cx="150" cy="30" r="20" fill="#fff"/><path d="M132 36q18-14 36 0M138 18q8 18 24 22" fill="none" stroke-width="2"/><path d="M15 140h270"/></g></svg><figcaption>Voleibol</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/voleibol.svg" alt="Dibujo de voleibol" width="300" height="160"><figcaption>Voleibol</figcaption></figure>
                 <p>Dos equipos separados por una red deben pasar el balón al campo contrario sin dejar que toque el suelo en el propio.</p>
                 <ul>
                     <li><strong>Jugadores:</strong> 6 por equipo</li>
@@ -141,7 +153,7 @@
             <div class="tarjeta deporte" id="beisbol" data-tipo="equipo">
                 <div class="pegatina" aria-hidden="true">⚾</div>
                 <h4>Béisbol</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de béisbol" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#e8d3a8"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M150 25L240 85 150 145 60 85z" fill="#c98f52"/><path d="M150 25L240 85 150 145 60 85z" fill="none"/><rect x="143" y="138" width="14" height="12" fill="#fff"/><rect x="233" y="78" width="14" height="14" fill="#fff"/><rect x="53" y="78" width="14" height="14" fill="#fff"/><path d="M95 125l60-70" stroke-width="9" stroke="#8a5a2b"/><circle cx="215" cy="45" r="14" fill="#fff"/><path d="M208 38q6 7 0 14M222 38q-6 7 0 14" fill="none" stroke-width="2"/></g></svg><figcaption>Béisbol</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/beisbol.svg" alt="Dibujo de béisbol" width="300" height="160"><figcaption>Béisbol</figcaption></figure>
                 <p>Un equipo batea y corre por las bases mientras el otro lanza y defiende en el campo. Gana quien anota más carreras.</p>
                 <ul>
                     <li><strong>Duración:</strong> 9 entradas</li>
@@ -166,7 +178,7 @@
             <div class="tarjeta deporte" id="natacion" data-tipo="individual">
                 <div class="pegatina" aria-hidden="true">🏊</div>
                 <h4>Natación</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de natación" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#a9dcf2"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M0 70q25-12 50 0t50 0 50 0 50 0 50 0 50 0" fill="none"/><path d="M0 100q25-12 50 0t50 0 50 0 50 0 50 0 50 0" fill="none"/><path d="M0 130q25-12 50 0t50 0 50 0 50 0 50 0 50 0" fill="none"/><circle cx="130" cy="62" r="14" fill="#f5c9a0"/><path d="M144 66q40-20 70 4" fill="none"/><path d="M120 58q-14-22 6-32" fill="none"/><path d="M0 28h300" stroke-dasharray="6 8" stroke="#e57373"/></g></svg><figcaption>Natación</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/natacion.svg" alt="Dibujo de natación" width="300" height="160"><figcaption>Natación</figcaption></figure>
                 <p>Se compite en piscina cubriendo una distancia en el menor tiempo posible. Trabaja todo el cuerpo y cuida las articulaciones.</p>
                 <ul>
                     <li><strong>Estilos:</strong> libre, espalda, pecho y mariposa</li>
@@ -189,7 +201,7 @@
             <div class="tarjeta deporte" id="atletismo" data-tipo="individual">
                 <div class="pegatina" aria-hidden="true">🏃</div>
                 <h4>Atletismo</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de atletismo" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#f3b6a0"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 120q140 40 280-10M10 138q140 40 280-10" fill="none"/><circle cx="150" cy="38" r="13" fill="#f5c9a0"/><path d="M150 52l-8 38 22 14M146 62l-30 10M150 60l30-14M142 90l-26 28" fill="none" stroke-width="5"/></g></svg><figcaption>Atletismo</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/atletismo.svg" alt="Dibujo de atletismo" width="300" height="160"><figcaption>Atletismo</figcaption></figure>
                 <p>Reúne carreras, saltos y lanzamientos. Es la base de muchos deportes porque entrena velocidad, resistencia y fuerza.</p>
                 <ul>
                     <li><strong>Carreras:</strong> velocidad, medio fondo, fondo y marcha</li>
@@ -212,7 +224,7 @@
             <div class="tarjeta deporte" id="tenis" data-tipo="individual">
                 <div class="pegatina" aria-hidden="true">🎾</div>
                 <h4>Tenis</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de tenis" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#d4efb2"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="20" width="270" height="120" fill="none"/><path d="M150 20v120M15 80h270" stroke-width="2"/><ellipse cx="95" cy="70" rx="30" ry="38" fill="#fff" transform="rotate(-25 95 70)"/><path d="M110 105l30 40" stroke-width="7"/><circle cx="215" cy="50" r="14" fill="#e8f25c"/><path d="M205 44q10 6 20 0" fill="none" stroke-width="2"/></g></svg><figcaption>Tenis</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/tenis.svg" alt="Dibujo de tenis" width="300" height="160"><figcaption>Tenis</figcaption></figure>
                 <p>Se juega con raqueta y pelota sobre una cancha dividida por una red, de uno contra uno (individuales) o de dos contra dos (dobles).</p>
                 <ul>
                     <li><strong>Puntuación:</strong> 15, 30, 40 y juego</li>
@@ -235,7 +247,7 @@
             <div class="tarjeta deporte" id="ciclismo" data-tipo="individual">
                 <div class="pegatina" aria-hidden="true">🚴</div>
                 <h4>Ciclismo</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de ciclismo" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#e3d6f5"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="90" cy="105" r="35" fill="none"/><circle cx="215" cy="105" r="35" fill="none"/><path d="M90 105l45-55h55l25 55M135 50l35 55-80 0M190 50l-8-18h18M135 50l-8-14h-14" fill="none"/></g></svg><figcaption>Ciclismo</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/ciclismo.svg" alt="Dibujo de ciclismo" width="300" height="160"><figcaption>Ciclismo</figcaption></figure>
                 <p>Se compite en bicicleta en ruta, pista, montaña o BMX. Exige resistencia, estrategia y mucha constancia.</p>
                 <ul>
                     <li><strong>Modalidades:</strong> ruta, pista, montaña y BMX</li>
@@ -258,7 +270,7 @@
             <div class="tarjeta deporte" id="boxeo" data-tipo="individual">
                 <div class="pegatina" aria-hidden="true">🥊</div>
                 <h4>Boxeo</h4>
-                <figure class="foto dibujo"><svg viewBox="0 0 300 160" role="img" aria-label="Dibujo de boxeo" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="160" fill="#f7c6c6"/><g stroke="#1f2a5c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M95 130V70q0-38 40-38h30q45 0 45 38v10q0 12-12 12h-38v38z" fill="#d94040"/><path d="M95 112h72" fill="none"/><rect x="95" y="112" width="72" height="32" fill="#fff"/><path d="M155 62q20 0 20 20" fill="none" stroke-width="2"/></g></svg><figcaption>Boxeo</figcaption></figure>
+                <figure class="foto dibujo"><img src="imagenes/boxeo.svg" alt="Dibujo de boxeo" width="300" height="160"><figcaption>Boxeo</figcaption></figure>
                 <p>Dos competidores se enfrentan en un ring usando solo los puños, con guantes y bajo la vigilancia de un árbitro.</p>
                 <ul>
                     <li><strong>Rounds:</strong> de 3 minutos, hasta 12 en combates de campeonato</li>
@@ -304,17 +316,81 @@
             <h2>Deportistas ecuatorianos</h2>
             <p>Ecuador también tiene campeones que inspiran. Conoce a algunos:</p>
             <div class="atletas">
-                <div class="atleta"><h3>Jefferson Pérez</h3><p><strong>Atletismo</strong></p><p>Ganó el oro olímpico en marcha de 20 km en Atlanta 1996 y la plata en Pekín 2008. Fue campeón mundial en 2003 y 2007.</p></div>
+                <div class="atleta"><h3>Jefferson Pérez</h3><p><strong>Atletismo</strong></p><p>Ganó el oro olímpico en marcha de 20 km en Atlanta 1996 y la plata en Pekín 2008. Fue campeón mundial en 2003 y 2007. Desde julio de 2026 preside el Comité Olímpico Ecuatoriano.</p></div>
                 <div class="atleta"><h3>Richard Carapaz</h3><p><strong>Ciclismo</strong></p><p>Ganó el Giro de Italia 2019 y el oro olímpico en ciclismo de ruta en Tokio 2020.</p></div>
                 <div class="atleta"><h3>Neisi Dajomes</h3><p><strong>Halterofilia</strong></p><p>Ganó el oro olímpico en Tokio 2020, en la categoría de 76 kg.</p></div>
                 <div class="atleta"><h3>Antonio Valencia</h3><p><strong>Fútbol</strong></p><p>Fue capitán del Manchester United y de la selección de Ecuador.</p></div>
                 </div>
         </section>
 
+        <section class="hoja" id="salud">
+            <h2>Salud y hábitos del deportista</h2>
+            <p>Cuidar tu cuerpo es parte del deporte. Estos hábitos te ayudan a rendir mejor y a evitar lesiones.</p>
+            <div class="atletas">
+                <div class="atleta"><h3>🔥 Calentamiento</h3><p>Dedica de 5 a 10 minutos a movimientos suaves antes de entrenar y termina con estiramientos al final.</p></div>
+                <div class="atleta"><h3>💧 Hidratación</h3><p>Toma agua antes, durante y después de hacer deporte, sin esperar a tener mucha sed.</p></div>
+                <div class="atleta"><h3>🍎 Alimentación</h3><p>Come frutas, verduras, proteínas y carbohidratos. Una comida equilibrada un par de horas antes te da energía.</p></div>
+                <div class="atleta"><h3>😴 Descanso</h3><p>Dormir entre 8 y 10 horas, como se recomienda a los adolescentes, ayuda a que tu cuerpo se recupere.</p></div>
+                <div class="atleta"><h3>🛡️ Prevención de lesiones</h3><p>Usa calzado y protección adecuados (casco, protector bucal, canilleras), aumenta la intensidad poco a poco y para si sientes un dolor fuerte.</p></div>
+                </div>
+            <p class="aviso">Si tienes alguna condición de salud, consulta con un médico antes de empezar un deporte.</p>
+        </section>
+
+        <section class="hoja" id="glosario">
+            <h2>Glosario deportivo</h2>
+            <p>Palabras que escucharás en los partidos y lo que significan.</p>
+            <div class="buscador">
+                <label for="buscador">Buscar un término</label>
+                <input type="search" id="buscador" placeholder="Por ejemplo: set" autocomplete="off">
+            </div>
+            <dl class="glosario">
+                <div class="termino"><dt>Ace <span>(tenis)</span></dt><dd>Saque que el rival no logra tocar y que da el punto directo.</dd></div>
+                <div class="termino"><dt>Bloqueo <span>(voleibol)</span></dt><dd>Salto frente a la red para frenar el remate del equipo contrario.</dd></div>
+                <div class="termino"><dt>Fuera de juego <span>(fútbol)</span></dt><dd>Posición adelantada de un atacante cuando recibe un pase, que se sanciona.</dd></div>
+                <div class="termino"><dt>Garrocha <span>(atletismo)</span></dt><dd>Salto en el que el atleta se ayuda de una vara flexible para pasar una barra.</dd></div>
+                <div class="termino"><dt>Home run <span>(béisbol)</span></dt><dd>Batazo que le permite al bateador recorrer todas las bases y anotar; en español, jonrón.</dd></div>
+                <div class="termino"><dt>Maratón <span>(atletismo)</span></dt><dd>Carrera de fondo de 42,195 kilómetros.</dd></div>
+                <div class="termino"><dt>Mariposa <span>(natación)</span></dt><dd>Estilo en el que los dos brazos se mueven a la vez por encima del agua.</dd></div>
+                <div class="termino"><dt>Nocaut <span>(boxeo)</span></dt><dd>Victoria cuando el rival cae y no logra levantarse antes de que el árbitro cuente diez.</dd></div>
+                <div class="termino"><dt>Out <span>(béisbol)</span></dt><dd>Eliminación de un bateador o de un corredor.</dd></div>
+                <div class="termino"><dt>Pelotón <span>(ciclismo)</span></dt><dd>Grupo principal de ciclistas que va junto en una carrera.</dd></div>
+                <div class="termino"><dt>Penal <span>(fútbol)</span></dt><dd>Tiro directo a la portería desde el punto penal, por una falta dentro del área.</dd></div>
+                <div class="termino"><dt>Round <span>(boxeo)</span></dt><dd>Cada una de las partes en que se divide un combate.</dd></div>
+                <div class="termino"><dt>Saque <span>(voleibol y tenis)</span></dt><dd>Golpe con el que se inicia cada jugada.</dd></div>
+                <div class="termino"><dt>Set <span>(voleibol y tenis)</span></dt><dd>Parte de un partido; gana el partido quien gana más sets.</dd></div>
+                <div class="termino"><dt>Strike <span>(béisbol)</span></dt><dd>Lanzamiento válido que el bateador no golpea o deja pasar; con tres strikes queda out.</dd></div>
+                <div class="termino"><dt>Triple <span>(baloncesto)</span></dt><dd>Canasta de tres puntos, lanzada desde detrás de la línea.</dd></div>
+                </dl>
+            <p id="glosario-vacio" hidden>No encontramos ese término. Prueba con otra palabra.</p>
+        </section>
+
+        <section class="hoja" id="test">
+            <h2>¿Qué deporte va contigo?</h2>
+            <p>Responde cinco preguntas y te recomendamos uno de los nueve deportes.</p>
+            <div class="quiz" id="test-caja"></div>
+        </section>
+
         <section class="hoja" id="quiz">
             <h2>Quiz: ¿cuánto sabes?</h2>
             <p>Responde cinco preguntas con lo que aprendiste en esta página.</p>
             <div class="quiz" id="quiz-caja"></div>
+        </section>
+
+        <section class="hoja" id="saber-mas">
+            <h2>Para saber más</h2>
+            <p>Sitios oficiales para ampliar la información de esta página (se abren en una pestaña nueva):</p>
+            <ul class="enlaces">
+                <li><a href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">FIFA</a>: organismo mundial del fútbol.</li>
+                <li><a href="https://www.theifab.com" target="_blank" rel="noopener noreferrer">IFAB</a>: las Reglas de Juego del fútbol.</li>
+                <li><a href="https://www.fiba.basketball" target="_blank" rel="noopener noreferrer">FIBA</a>: federación internacional de baloncesto.</li>
+                <li><a href="https://www.fivb.com" target="_blank" rel="noopener noreferrer">FIVB</a>: federación internacional de voleibol.</li>
+                <li><a href="https://www.wbsc.org" target="_blank" rel="noopener noreferrer">WBSC</a>: confederación mundial de béisbol y sófbol.</li>
+                <li><a href="https://www.worldaquatics.com" target="_blank" rel="noopener noreferrer">World Aquatics</a>: federación internacional de natación.</li>
+                <li><a href="https://worldathletics.org" target="_blank" rel="noopener noreferrer">World Athletics</a>: federación internacional de atletismo.</li>
+                <li><a href="https://www.itftennis.com" target="_blank" rel="noopener noreferrer">ITF</a>: federación internacional de tenis.</li>
+                <li><a href="https://www.uci.org" target="_blank" rel="noopener noreferrer">UCI</a>: unión ciclista internacional.</li>
+                <li><a href="https://olympics.com" target="_blank" rel="noopener noreferrer">Juegos Olímpicos</a>: noticias, deportes y medallistas olímpicos, incluido el boxeo.</li>
+            </ul>
         </section>
     </main>
 
